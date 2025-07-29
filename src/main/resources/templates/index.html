@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ordem de Serviço</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <h1>Criar Ordem de Serviço</h1>
+    <form method="post" action="/criar-servico">
+        <label for="setor">Setor</label>
+        <select id="setor" name="setor" required>
+            <option value="">Selecione...</option>
+            <option value="CONTABILIDADE">Contabilidade</option>
+            <option value="FISCAL">Fiscal</option>
+            <option value="DEPARTAMENTO_PESSOAL">Departamento Pessoal</option>
+            <option value="LEGALIZACAO">Legalização</option>
+            <option value="ADMINISTRATIVO">Administrativo</option>
+        </select>
+        <label for="responsavelExecucao">Responsável pela Execução</label>
+        <input type="text" id="responsavelExecucao" name="responsavelExecucao" required>
+
+        <label for="codigoEmpresa">Código da Empresa</label>
+        <input type="text" id="codigoEmpresa" name="codigoEmpresa" required>
+
+        <label for="nomeContato">Nome do Contato</label>
+        <input type="text" id="nomeContato" name="nomeContato" required>
+
+        <label for="telefoneContato">Telefone do Contato</label>
+        <input type="tel" id="telefoneContato" name="telContato" required>
+
+        <label for="emailCliente">Email do Cliente</label>
+        <input type="email" id="emailCliente" name="emailCliente" required>
+
+        <label for="tipoServico">Tipo de Serviço</label>
+        <input type="text" id="tipoServico" name="tipoServico" required>
+
+        <label for="descricaoServico">Descrição do Serviço</label>
+        <textarea id="descricaoServico" name="descServico" rows="4" required></textarea>
+
+        <label for="observacoes">Observações</label>
+        <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+
+        <label for="formaPagamento">Forma de Pagamento</label>
+        <input type="text" id="formaPagamento" name="formaPagamento" required>
+
+        <label for="dataAbertura">Data de Abertura</label>
+        <input type="date" id="dataAbertura" name="dataAbertura" required>
+
+        <label for="prazoEntrega">Prazo de Entrega</label>
+        <input type="date" id="prazoEntrega" name="prazoEntrega" required>
+
+        <label for="valorServico">Valor do Serviço (R$)</label>
+        <input type="number" step="0.01" id="valorServico" name="valServico" required>
+
+        <label for="valorDesconto">Valor do Desconto (R$)</label>
+        <input type="number" step="0.01" id="valorDesconto" name="valDesconto" required>
+
+        <button type="submit" class="botao-azul">Criar</button>
+        <div class="container">
+            <button type="button" class="botao-verde" onclick="window.location.href='/historico'">Histórico de Cadastros</button>
+        </div>
+    </form>
+</body>
+</html>

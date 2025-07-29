@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico de Ordens</title>
+    <link rel="stylesheet" href="/historico.css">
+</head>
+<body>
+    <h1>Histórico de Ordens de Serviço</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Setor</th>
+            <th>Responsável</th>
+            <th>Código da Empresa</th>
+            <th>Nome de Contato</th>
+            <th>Telefone de Contato</th>
+            <th>Email do Cliente</th>
+            <th>Tipo de Serviço</th>
+            <th>Descrição do Serviço</th>
+            <th>Observações</th>
+            <th>Forma de Pagamento</th>
+            <th>Data Abertura</th>
+            <th>Prazo de Entrega</th>
+            <th>Valor do Serviço</th>
+            <th>Valor do Desconto</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ordem : ${ordens}">
+            <td th:text="${ordem.id}"></td>
+            <td th:text="${ordem.setor}"></td>
+            <td th:text="${ordem.responsavelExecucao}"></td>
+            <td th:text="${ordem.codigoEmpresa}"></td>
+            <td th:text="${ordem.nomeContato}"></td>
+            <td th:text="${ordem.telContato}"></td>
+            <td th:text="${ordem.emailCliente}"></td>
+            <td th:text="${ordem.tipoServico}"></td>
+            <td th:text="${ordem.descServico}"></td>
+            <td th:text="${ordem.observacoes}"></td>
+            <td th:text="${ordem.formaPagamento}"></td>
+            <td th:text="${ordem.dataAbertura}"></td>
+            <td th:text="${ordem.prazoEntrega}"></td>
+            <td th:text="${ordem.valServico}"></td>
+            <td th:text="${ordem.valDesconto}"></td>
+            <td>
+                <a th:href="@{'/historico/editar/' + ${ordem.id}}" href="editar.html">Editar</a> |
+                <a th:href="@{'/historico/' + ${ordem.id}}">Excluir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button onclick="window.location.href='/'" class="botao-voltar">Voltar</button>
+</body>
+</html>

@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: whitesmoke;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  background: white;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid gray;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid lightgray;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 80px;
+}
+
+.botao-azul{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.botao-azul:hover{
+   background-color: steelblue;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.botao-verde {
+  padding: 10px 20px;
+  background-color: limegreen;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.botao-verde:hover {
+  background-color: green;
+}

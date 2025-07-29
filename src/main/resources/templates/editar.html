@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Ordem de Serviço</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <h1>Editar Ordem de Serviço</h1>
+    <form method="post" th:action="@{/historico/editar}" th:object="${ordemServico}">
+        <input type="hidden" th:field="*{id}"/>
+
+        <label>Setor</label>
+        <select id="setor" name="setor">
+            <option value="">Selecione...</option>
+            <option value="CONTABILIDADE" th:field="*{setor}">Contabilidade</option>
+            <option value="FISCAL" th:field="*{setor}">Fiscal</option>
+            <option value="DEPARTAMENTO_PESSOAL" th:field="*{setor}">Departamento Pessoal</option>
+            <option value="LEGALIZACAO" th:field="*{setor}">Legalização</option>
+            <option value="ADMINISTRATIVO"th:field="*{setor}">Administrativo</option>
+        </select>
+
+        <label>Responsável</label>
+        <input type="text" th:field="*{responsavelExecucao}"/>
+
+        <label>Código da Empresa</label>
+        <input type="text" th:field="*{codigoEmpresa}"/>
+
+        <label>Nome de Contato</label>
+        <input type="text" th:field="*{nomeContato}"/>
+
+        <label>Telefone de Contato</label>
+        <input type="tel" th:field="*{telContato}" />
+
+        <label>Email do Cliente</label>
+        <input type="email" th:field="*{emailCliente}" />
+
+        <label>Tipo de Serviço</label>
+        <input type="text" th:field="*{tipoServico}" />
+
+        <label>Descrição do Serviço</label>
+        <textarea th:field="*{descServico}"></textarea>
+
+        <label>Observações</label>
+        <textarea th:field="*{observacoes}"></textarea>
+
+        <label>Forma de Pagamento</label>
+        <input type="text" th:field="*{formaPagamento}" />
+
+        <label>Data de Abertura</label>
+        <input type="date" th:field="*{dataAbertura}" />
+
+        <label>Prazo de Entrega</label>
+        <input type="date" th:field="*{prazoEntrega}" />
+
+        <label>Valor do Serviço</label>
+        <input type="number" step="0.01" th:field="*{valServico}" />
+
+        <label>Valor do Desconto</label>
+        <input type="number" step="0.01" th:field="*{valDesconto}" />
+
+        <button type="submit" class="botao-azul">Salvar Alterações</button>
+        <div class="container">
+            <button onclick="window.location.href='/historico'" class="botao-verde">Cancelar</button>
+        </div>
+    </form>
+</body>
+</html>
